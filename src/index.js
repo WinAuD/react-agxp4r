@@ -1,33 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-class MyNum extends React.Component {
-            render() {
-                const myNiceNum = {
-                    display: "inline-block",    // display: inline-block TEST;
-                    padding: "30px",            // padding: 30px
-                    borderRadius: '50%',        // border-radius: 50%
-                    backgroundColor: this.props.myColor, // background-color: #C6DCEE
-                    fontFamily: this.props.myColor,      // font-family: fantasy
-                    fontSize: 64,           // font-size: 64px
-                    textAlign: "center"         // text-align: center
-                };
+function getRandomColor() {
+  return "#" + ((Math.random() * 0xfff) << 0).toString(16);
+}
 
-                return (
-                    <div style={myNiceNum}>
-                        {this.props.children}
-                    </div>
-                );
-            }
-        }
+class NameTag extends React.Component {
+  render() {
+    const myNiceNameTag = {
+      display: "inline-block", // display: inline-block TEST;
+      padding: "10px", // padding: 30px
+      borderRadius: "50%", // border-radius: 50%
+      backgroundColor: this.props.bgcolor || getRandomColor(), // background-color: #C6DCEE
+      fontFamily: "courier", // font-family: fantasy
+      fontSize: 64, // font-size: 64px
+      textAlign: "center" // text-align: center
+    };
 
-        ReactDOM.render(
-            <div>
-                <MyNum myColor="#AEA" myFont="courier">1</MyNum>
-                <MyNum myColor="#EEA" myFont="courier">3</MyNum>
-                <MyNum myColor="#AAA" myFont="courier">4</MyNum>
-                <MyNum myColor="#EEE" myFont="courier">5</MyNum>
+    return <div style={myNiceNameTag}>{this.props.children}</div>;
+  }
+}
 
-            </div>,
-            document.getElementById("myContainer")
-        );
+ReactDOM.render(
+  <div>
+    <NameTag bgcolor="#F00">Spiderman</NameTag>
+    <NameTag bgcolor="#AEA">Spiderman</NameTag>
+    <NameTag>AntWoman</NameTag>
+    <NameTag>IronMan</NameTag>
+  </div>,
+  document.getElementById("myContainer")
+);
