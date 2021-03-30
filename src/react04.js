@@ -24,7 +24,7 @@ class NameTag extends React.Component {
 ReactDOM.render(
   <div>
     <NameTag bgcolor="#F00">Spiderman</NameTag>
-    <NameTag bgcolor="#AEA">Spiderman</NameTag>
+    <NameTag bgcolor="#AEA">Batman</NameTag>
     <NameTag>AntWoman</NameTag>
     <NameTag>IronMan</NameTag>
   </div>,

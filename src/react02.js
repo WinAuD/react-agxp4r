@@ -13,13 +13,11 @@ class NameTag extends React.Component {
       textAlign: "center" // text-align: center
     };
 
-    return <div style={myNiceNameTag}>{this.props.children}</div>;
+    return <div style={myNiceNameTag}>{this.props.name}</div>;
   }
 }
 
 ReactDOM.render(
-  <div>
-    <NameTag>SpiderMan</NameTag>
-  </div>,
+  <NameTag name={"Spiderman"}/>,
   document.getElementById("myContainer")
 );

@@ -4,7 +4,7 @@ import './react.css';
 
 ReactDOM.render(
   
-    <h3>Goreact</h3>,
+    <h3>Go react</h3>,
   
   document.getElementById("myContainer")
 );
