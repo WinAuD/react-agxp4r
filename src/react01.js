@@ -4,7 +4,7 @@ import './react.css';
 
 ReactDOM.render(
   
-    <div>Goreact</div>,
+    <h3>Goreact</h3>,
   
   document.getElementById("myContainer")
 );
